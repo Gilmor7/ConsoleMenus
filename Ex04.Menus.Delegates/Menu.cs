@@ -1,15 +1,16 @@
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Delegates
 {
-    public class Menu : MenuItem, IClickable
+    public class Menu : MenuItem
     {
         protected string m_ExitWord;
         private readonly List<MenuItem> r_SubItems;
-        
+
         public Menu(string i_Title) : base(i_Title)
         {
             m_ExitWord = "Back";
@@ -40,7 +41,7 @@ namespace Ex04.Menus.Interfaces
                 if (userChoice != 0)
                 {
                     MenuItem subItem = r_SubItems[userChoice - 1];
-                    (subItem as IClickable).OnClick();
+                    subItem.OnClick();
                 }
                 else
                 {
@@ -89,7 +90,7 @@ namespace Ex04.Menus.Interfaces
             Console.WriteLine($"0. {m_ExitWord}");
         }
 
-        public void OnClick()
+        internal override void OnClick()
         {
             Show();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ex04.Menus.Interfaces;
+using System;
 
 namespace Ex04.Menus.Test
 {
@@ -6,7 +7,8 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-
+            TestManager testManager = new TestManager();
+            testManager.Run();
         }
     }
 }
