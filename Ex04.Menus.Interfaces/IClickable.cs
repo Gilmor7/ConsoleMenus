@@ -1,6 +1,6 @@
 namespace Ex04.Menus.Interfaces
 {
-    public interface IClickable
+    internal interface IClickable
     {
         void OnClick();
     }

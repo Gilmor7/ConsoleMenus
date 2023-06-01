@@ -7,8 +7,14 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            MainMenu myMainMenu = new MainMenu("My Main");
-            myMainMenu.Show();
+            MainMenu interfaceMainMenu = new MainMenu("Interface Main Menu!");
+            DateMenuInterface dataTimeInterfaceMenu = new DateMenuInterface();
+            VersionMenuInterface versionSpacesMenu = new VersionMenuInterface();
+            interfaceMainMenu.AddItemToMenu(dataTimeInterfaceMenu.DateTimeMenu);
+            interfaceMainMenu.AddItemToMenu(versionSpacesMenu.VersionSpacesMenu);
+            
+            interfaceMainMenu.Show();
         }
+        
     }
 }

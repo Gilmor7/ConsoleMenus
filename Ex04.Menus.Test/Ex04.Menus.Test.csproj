@@ -46,7 +46,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateMenuInterface.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TestMenuInterface.cs" />
+    <Compile Include="VersionMenuInterface.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
