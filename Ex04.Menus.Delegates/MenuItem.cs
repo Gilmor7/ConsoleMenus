@@ -23,5 +23,7 @@ namespace Ex04.Menus.Delegates
                 m_Title = value;
             }
         }
+
+        internal abstract void OnClick();
     }
 }
