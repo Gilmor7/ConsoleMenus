@@ -6,22 +6,22 @@ namespace Ex04.Menus.Interfaces
     public class Menu : MenuItem, IClickable
     {
         protected string m_ExitWord;
-        private List<MenuItem> m_subItems;
+        private readonly List<MenuItem> r_SubItems;
         
         public Menu(string i_Title) : base(i_Title)
         {
             m_ExitWord = "Back";
-            m_subItems = new List<MenuItem>();
+            r_SubItems = new List<MenuItem>();
         }
 
         public void AddItemToMenu(MenuItem i_MenuItem)
         {
-            m_subItems.Add(i_MenuItem);
+            r_SubItems.Add(i_MenuItem);
         }
 
         public void RemoveItemFromMenu(MenuItem i_MenuItem)
         {
-            m_subItems.Remove(i_MenuItem);
+            r_SubItems.Remove(i_MenuItem);
         }
 
         public void Show()
@@ -30,12 +30,13 @@ namespace Ex04.Menus.Interfaces
 
             while (stillRunning)
             {
+                int userChoice = getUserChoice();
+
                 showMenuTitle();
                 displayAllOptionsInMenu();
-                int userChoice = getUserChoice();
                 if (userChoice != 0)
                 {
-                    MenuItem subItem = m_subItems[userChoice - 1];
+                    MenuItem subItem = r_SubItems[userChoice - 1];
                     (subItem as IClickable).OnClick();
                 }
                 else
@@ -62,7 +63,7 @@ namespace Ex04.Menus.Interfaces
         {
             string userChoiceStr = Console.ReadLine();
             bool isValidInput = int.TryParse(userChoiceStr, out int userChoice);
-            while (!isValidInput || userChoice < 0 || userChoice > m_subItems.Count)
+            while (!isValidInput || userChoice < 0 || userChoice > r_SubItems.Count)
             {
                 Console.WriteLine("Invalid input, please try again");
                 userChoiceStr = Console.ReadLine();
@@ -74,11 +75,13 @@ namespace Ex04.Menus.Interfaces
         private void displayAllOptionsInMenu()
         {
             int i = 1;
-            foreach (MenuItem subItem in m_subItems)
+
+            foreach (MenuItem subItem in r_SubItems)
             {
                 Console.WriteLine($"{i}. {subItem.Title}");
                 i++;
             }
+
             Console.WriteLine($"0. {m_ExitWord}");
         }
 

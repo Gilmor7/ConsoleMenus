@@ -4,17 +4,16 @@ namespace Ex04.Menus.Interfaces
 {
     public class ExecutableMenuItem : MenuItem, IClickable
     {
-
-        private List<IClickObserver> m_ExecutableMenuItemListeaners;
+        private readonly List<IClickObserver> r_ExecutableMenuItemListeners;
 
         public ExecutableMenuItem(string i_Title): base(i_Title)
         {
-            m_ExecutableMenuItemListeaners = new List<IClickObserver>();
+            r_ExecutableMenuItemListeners = new List<IClickObserver>();
         }
 
         public void OnClick()
         {
-            foreach (IClickObserver observer in m_ExecutableMenuItemListeaners)
+            foreach (IClickObserver observer in r_ExecutableMenuItemListeners)
             {
                 observer.executableItem_Click();
             }
@@ -22,12 +21,12 @@ namespace Ex04.Menus.Interfaces
 
         public void AddListener(IClickObserver i_Listener)
         {
-            m_ExecutableMenuItemListeaners.Add(i_Listener);
+            r_ExecutableMenuItemListeners.Add(i_Listener);
         }
 
         public void RemoveListener(IClickObserver i_Listener)
         {
-            m_ExecutableMenuItemListeaners.Remove(i_Listener);
+            r_ExecutableMenuItemListeners.Remove(i_Listener);
         }
     }
 }
