@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
@@ -30,10 +31,11 @@ namespace Ex04.Menus.Interfaces
 
             while (stillRunning)
             {
-                int userChoice = getUserChoice();
-
                 showMenuTitle();
                 displayAllOptionsInMenu();
+                
+                int userChoice = getUserChoice();
+                
                 if (userChoice != 0)
                 {
                     MenuItem subItem = r_SubItems[userChoice - 1];
@@ -49,14 +51,15 @@ namespace Ex04.Menus.Interfaces
         private void showMenuTitle()
         {
             int titleLen = Title.Length;
+            StringBuilder divider = new StringBuilder();
             
             Console.WriteLine(Title);
             for (int i = 0; i < titleLen; i++)
             {
-                Console.Write("=");
+                divider.Append("=");
             }
             
-            Console.WriteLine();
+            Console.WriteLine(divider.ToString());
         }
 
         private int getUserChoice()
