@@ -47,7 +47,7 @@ namespace Ex04.Menus.Test
                 int numOfSpaces;
                 string userSentence;
                 
-                Console.WriteLine("Enter a sentence");
+                Console.WriteLine("Enter a sentence:");
                 userSentence = Console.ReadLine();
                 numOfSpaces = countSpaces(userSentence);
                 
