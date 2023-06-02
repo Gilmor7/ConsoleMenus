@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Ex02.ConsoleUtils;
 
 namespace Ex04.Menus.Interfaces
 {
@@ -32,6 +33,7 @@ namespace Ex04.Menus.Interfaces
 
             while (stillRunning)
             {
+                Screen.Clear();
                 showMenuTitle();
                 displayAllOptionsInMenu();
                 

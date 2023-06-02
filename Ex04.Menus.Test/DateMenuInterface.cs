@@ -35,6 +35,8 @@ namespace Ex04.Menus.Test
             {
                 DateTime dateTime = DateTime.Now;
                 Console.WriteLine("Current date is: {0:dd/MM/yyyy}", dateTime);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
         }
         
@@ -44,6 +46,8 @@ namespace Ex04.Menus.Test
             {
                 DateTime dateTime = DateTime.Now;
                 Console.WriteLine("The current time is: {0:HH:mm:ss}", dateTime);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
         }
     }
