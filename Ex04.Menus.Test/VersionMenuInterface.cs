@@ -37,6 +37,8 @@ namespace Ex04.Menus.Test
             public void executableItem_Click()
             {
                 Console.WriteLine(m_CurrVersion);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
         }
 
@@ -52,6 +54,8 @@ namespace Ex04.Menus.Test
                 numOfSpaces = countSpaces(userSentence);
                 
                 Console.WriteLine("The number of spaces in the sentence is: {0}", numOfSpaces);
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
             }
 
             private int countSpaces(string i_UserInput)

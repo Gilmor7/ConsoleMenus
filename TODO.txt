@@ -1,4 +1,1 @@
-1. Make sure that DateTime works (gives current Time and Date)
-2. Update code to use Ex2.Utils for screen clearing (this might cause some printing issues)
-3. Probebly need to add "Press any key to continue..." In the test classes XXX_Clicked methods after completing TODO number 2
 4. Go over the code and check style standarts 

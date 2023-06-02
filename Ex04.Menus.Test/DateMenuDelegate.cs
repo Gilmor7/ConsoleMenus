@@ -32,14 +32,18 @@ namespace Ex04.Menus.Test
 
         private void showData_Clicked()
         {
-            DateTime dateTime = new DateTime();
+            DateTime dateTime = DateTime.Now;
             Console.WriteLine("Current date is: {0:dd/MM/yyyy}", dateTime);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
 
         private void showTime_Clicked()
         {
-            DateTime dateTime = new DateTime();
+            DateTime dateTime = DateTime.Now;
             Console.WriteLine("The current time is: {0:HH:mm:ss}", dateTime);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
         }
     }
     
