@@ -52,11 +52,11 @@ namespace Ex04.Menus.Delegates
 
         private void showMenuTitle()
         {
-            int titleLen = Title.Length;
+            int titleLength = Title.Length;
             StringBuilder divider = new StringBuilder();
             
             Console.WriteLine(Title);
-            for (int i = 0; i < titleLen; i++)
+            for (int i = 0; i < titleLength; i++)
             {
                 divider.Append("=");
             }

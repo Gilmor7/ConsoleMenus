@@ -22,8 +22,8 @@ namespace Ex04.Menus.Test
             ExecutableMenuItem versionOption = new ExecutableMenuItem("Show Version");
             ExecutableMenuItem spacesOption = new ExecutableMenuItem("Count Spaces");
 
-            versionOption.Click += versionOption_Clicked;
-            spacesOption.Click += spacesOption_Clicked;
+            versionOption.ReportClick += versionOption_Clicked;
+            spacesOption.ReportClick += spacesOption_Clicked;
             versionSpacesMenu.AddItemToMenu(versionOption);
             versionSpacesMenu.AddItemToMenu(spacesOption);
 
@@ -38,11 +38,11 @@ namespace Ex04.Menus.Test
         private void spacesOption_Clicked()
         {
             int numOfSpaces;
-            string userSentence;
+            string userInput;
 
             Console.WriteLine("Enter a sentence:");
-            userSentence = Console.ReadLine();
-            numOfSpaces = countSpaces(userSentence);
+            userInput = Console.ReadLine();
+            numOfSpaces = countSpaces(userInput);
 
             Console.WriteLine("The number of spaces in the sentence is: {0}", numOfSpaces);
         }
