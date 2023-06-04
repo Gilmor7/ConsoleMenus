@@ -21,8 +21,8 @@ namespace Ex04.Menus.Test
             ExecutableMenuItem dateOption = new ExecutableMenuItem("Show Date");
             ExecutableMenuItem timeOption = new ExecutableMenuItem("Show Time");
 
-            dateOption.Click += showData_Clicked;
-            timeOption.Click += showTime_Clicked;
+            dateOption.ReportClick += showData_Clicked;
+            timeOption.ReportClick += showTime_Clicked;
             
             dataTimeMenu.AddItemToMenu(dateOption);
             dataTimeMenu.AddItemToMenu(timeOption);
